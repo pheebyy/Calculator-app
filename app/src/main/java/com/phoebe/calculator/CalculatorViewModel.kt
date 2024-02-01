@@ -23,7 +23,7 @@ class CalculatorViewModel: ViewModel() {
 
 
     private fun performDeletion() {
-        val n = 0
+
         when{
             state.number2.isNotBlank() -> state = state.copy(
                 number2 = state.number2.dropLast(1)
@@ -75,7 +75,7 @@ class CalculatorViewModel: ViewModel() {
             )
             return
         }
-        if (!state.number2.contains (".") && !state.number2.isNotBlank()
+        if (!state.number2.contains (".") && state.number2.isBlank()
         ){
             state = state.copy(
                 number1 = state.number2 + "."
